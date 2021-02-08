@@ -8,12 +8,21 @@ let onlineStampSchema = new Schema({
     type: Date,
     default: Date.now()
   },
-  online: Int32
+  online: Int32,
+  inbattles: Int32
+})
+
+
+let dayStat = new Schema({
+  pcu: Int32,
+  avg: Int32,
+  sigma: Int32
 })
 
 let daySchema = new Schema({
   date: Date,
-  pcu: Int32,
+  online: dayStat,
+  inbattles: dayStat,
   track: [onlineStampSchema]
 })
 

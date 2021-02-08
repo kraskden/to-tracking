@@ -333,10 +333,10 @@ Handlers.getDetailOnline = (req, res) => {
   })
 }
 
-Handlers.getPcuOnline = (req, res) => {
+Handlers.getDayStatRecords = (req, res) => {
   const DEFAULT_PCU_SIZE = 30
   let days = req.query.days || DEFAULT_PCU_SIZE
-  OnlineManager.getPcuRecords(days).then((data) => {
+  OnlineManager.getDayStatRecords(days).then((data) => {
     res.json(data)
   }).catch(() => {
     res.sendStatus(500)

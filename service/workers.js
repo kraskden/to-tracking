@@ -15,7 +15,7 @@ function makeSchedule() {
     })
     schedule.scheduleJob('*/15 * * * *', function() {
       OnlineProvider.getCurrentOnline().then((online) => {
-        return OnlineManager.updateOnline(online)
+        return OnlineManager.updateOnline(online.online, online.inbattles)
       }).catch((err) => {
         logger.error("Error due online updating " + err)
       })

@@ -10,7 +10,11 @@ OnlineProvider.getCurrentOnline = async () => {
 
   let nodes = Object.values(obj.nodes)
 
-  return nodes.reduce((acc, curr) => acc + curr.online, 0)
+  return nodes.reduce((acc, curr) => {
+    acc.online += curr.online
+    acc.inbattles += curr.inbattles
+    return acc
+  }, {online: 0, inbattles: 0})
 }
 
 module.exports = OnlineProvider

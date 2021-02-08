@@ -48,7 +48,7 @@ app.get('/profile/update', Handlers.updateProfiles)
 app.get('/invite/:user', Handlers.auth, Handlers.adminChecker, Handlers.generateInvite)
 
 app.get('/online/detail', Handlers.getDetailOnline)
-app.get('/online/pcu', Handlers.getPcuOnline)
+app.get('/online/dayStats', Handlers.getDayStatRecords)
 
 Handlers.start().then(() => {
     app.listen(4000, (err) => {
