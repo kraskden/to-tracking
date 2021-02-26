@@ -256,9 +256,14 @@ class AccountManager {
     }
 
     static getUsersList() {
-      return Account.find({}, {login: 1, _id: 0, monthly: {$slice: -1}, weekly: {$slice: -1}, 
-        "monthly.time": 1, "weekly.time": 1,
-        "currWeek.time": 1, "currMonth.time": 1, "state.rank": 1})
+        let proj = {};
+        ["monthly", "weekly", "currWeek", "currMonth"].forEach((category) => {
+            ["time", "kills", "deaths"].forEach((prop) => {
+                proj[`${category}.${prop}`] = 1;
+            })
+        })
+        return Account.find({}, {login: 1, _id: 0, monthly: {$slice: -1}, weekly: {$slice: -1}, 
+            ...proj, "state.rank": 1})
     }
 
 }
