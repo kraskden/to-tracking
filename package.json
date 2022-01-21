@@ -19,7 +19,7 @@
     "emailjs-imap-client": "^3.1.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "log4js": "^6.2.1",
+    "log4js": "^6.4.0",
     "mongoose": "^5.9.13",
     "mongoose-int32": "^0.3.1",
     "node-fetch": "^2.6.0",
