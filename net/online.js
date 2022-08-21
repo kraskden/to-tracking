@@ -2,7 +2,7 @@ const fetch = require('node-fetch')
 
 const OnlineProvider = {}
 
-const URL = "https://tankionline.com/s/status.js"
+const URL = "https://tankionline.com/s/status.js/"
 
 OnlineProvider.getCurrentOnline = async () => {
   let res = await fetch(URL)
