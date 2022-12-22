@@ -18,7 +18,7 @@
     "cors": "^2.8.5",
     "emailjs-imap-client": "^3.1.0",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "log4js": "^6.2.1",
     "mongoose": "^5.9.13",
     "mongoose-int32": "^0.3.1",
